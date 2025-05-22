@@ -10,10 +10,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1
+      uses: microsoft/setup-msbuild@v2
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.1.1
@@ -33,7 +33,7 @@ jobs:
         mv TeamCord.msi TeamCord-win-x64-${{github.ref_name}}.msi
 
     - name: Upload setup artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: TeamCord-win-x64-${{github.ref_name}}.msi
         path: "src\\TeamCord.Setup\\bin\\x64\\Release\\TeamCord-win-x64-${{github.ref_name}}.msi"
@@ -45,8 +45,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/download-artifact@v3
+    - uses: actions/checkout@v4
+    - uses: actions/download-artifact@v4
       with:
         name: TeamCord-win-x64-${{github.ref_name}}.msi
 

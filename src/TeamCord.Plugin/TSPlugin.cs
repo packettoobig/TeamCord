@@ -18,7 +18,7 @@ namespace TeamCord.Plugin
         private TSPlugin()
         {
             PluginName = "TeamCord";
-            ApiVersion = 25;
+            ApiVersion = 26;
             Author = "Kleinrotti";
             Description = "Voice channel bridge between Teamspeak and Discord";
 #if DEBUG
